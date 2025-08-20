@@ -163,3 +163,13 @@ const mostrarPrimerHobbyDerechoPenal = (universidad) => {
   console.log(`Primer hobby del estudiante de Derecho Penal: ${universidad.facultades[1].carreras[0].estudiantes[0].hobbies[0]}`);
 };
 
+mostrarNombreUniversidad(universidad);
+mostrarCalleUniversidad(universidad);
+mostrarPrimeraFacultad(universidad);
+mostrarPrimeraCarrera(universidad);
+mostrarSegundaCarrera(universidad);
+mostrarPrimerEstudianteInformática(universidad);
+mostrarSegundoHobbyLaura(universidad);
+mostrarEdadSofia(universidad);
+mostrarPrimerHobbyDerechoPenal(universidad);
+
