@@ -1,77 +1,3 @@
-// Acceder a objetos
-const usuarios = { nombre: "Carlos", edad: 28 };
-console.log(usuario.edad); // 28
-console.log(usuario.nombre); // "Carlos"
-
-
-const usuario = { nombre: "Ana", "correo ": "ana@mail.com" };
-console.log(usuario["nombre"]); // "Ana"
-console.log(usuario["correo-personal"]); // "ana@mail.com"
-
-//Acceso en estructuras anidadas
-const empresa = {
-  nombre: "TechCorp",
-  empleados: [
-    {
-      nombre: "Ana",
-      direccion: { ciudad: "Madrid", codigoPostal: "28001" },
-    },
-    {
-      nombre: "Luis",
-      direccion: { ciudad: "Barcelona", codigoPostal: "08001" },
-    },
-  ],
-};
-// Ejemplos de acceso
-console.log(empresa.empleados[0].nombre);
-// "Ana"
-console.log(empresa.empleados[1].direccion.ciudad);
-// "Barcelona"
-console.log(empresa.empleados[0]["direccion"]["codigoPostal"]);
-// 28001
-// El último también se puede escribir de esta forma:
-console.log(empresa.empleados[0].direccion.codigoPostal);
-
-//Analice y codifique el siguiente objeto:
-const persona = {
-  nombre: "Anner",
-  edad: 28,
-  direccion: {
-    ciudad: "Managua",
-    codigoPostal: 28001,
-  },
-  hobbies: ["leer", "correr", "pintar"],
-};
-
-//Cree funciones flecha que reciban ese objeto por parámetro e impriman lo siguiente:
- 
-// Muestra el nombre de la persona.
-const mostrarNombre = (persona) => {
-  console.log(`Nombre: ${persona.nombre}`);
-};
-
-// Muestra la edad de la persona.
-const mostrarEdad = (persona) => {
-  console.log(`Edad: ${persona.edad}`);
-}
-
-//Muestra la ciudad donde vive.
-const mostrarCiudad = (persona) => {
-  console.log(`Ciudad: ${persona.direccion.ciudad}`);
-};
-
-// Muestra el código postal usando corchetes.
-const mostrarCodigoPostal = (persona) => {
-  console.log(`Código Postal: ${persona.direccion["codigoPostal"]}`);
-};
-
-// Muestra el segundo hobby de la persona.
-const mostrarSegundoHobby = (persona) => {
-  console.log(`Segundo Hobby: ${persona.hobbies[1]}`);
-};
-
-
-// Analice y codifique el objeto adjuntado en Classroom.
 const universidad = {
   nombre: "Universidad Central",
   ubicacion: {
@@ -114,62 +40,38 @@ const universidad = {
   ]
 };
 
-// Cree funciones flecha que reciban ese objeto por parámetro e impriman lo siguiente:
-
 // Muestra el nombre de la universidad.
-const mostrarNombreUniversidad = (universidad) => {
-  console.log(`Nombre de la universidad: ${universidad.nombre}`);
-};
 
+const nombreUniversidad = () => universidad.nombre;
+console.log(nombreUniversidad); // "Universidad Central"
 
-//Muestra la calle donde está ubicada.
-const mostrarCalleUniversidad = (universidad) => {
-  console.log(`Calle: ${universidad.ubicacion.direccion.calle}`);
-};
+// Muestra la calle donde esta ubicada 
 
-// Muestra el nombre de la primera facultad.
-const mostrarPrimeraFacultad = (universidad) => {
-  console.log(`Primera facultad: ${universidad.facultades[0].nombre}`);
-};
+const calleUniversidad = () => universidad.ubicacion.direccion.calle;
+console.log(calleUniversidad); // "Av. Principal"
 
-//Muestra el nombre de la primera facultad.
-const mostrarPrimeraCarrera = (universidad) => {
-  console.log(`Primera carrera de la primera facultad: ${universidad.facultades[0].carreras[0].nombre}`);
-};
+// Muestar el nombre de la primera facultad.
 
-//Muestra el nombre de la segunda carrera en la primera facultad.
-const mostrarSegundaCarrera = (universidad) => {
-  console.log(`Segunda carrera de la primera facultad: ${universidad.facultades[0].carreras[1].nombre}`);
-};
+const nombrePrimeraFacultad = () => universidad.facultades[0].nombre;
+console.log(nombrePrimeraFacultad); // "Ingeniería" 
 
+// muestra el nombre de la segunda carrera de la primera facultad.
+const nombreSegundaCarreraPrimeraFacultad = () => universidad.facultades[0].carreras[1].nombre;
+console.log(nombreSegundaCarreraPrimeraFacultad); // "Civil"
 
-//Muestra el nombre del primer estudiante de la carrera de Informática.
-const mostrarPrimerEstudianteInformática = (universidad) => {
-  console.log(`Primer estudiante de Informática: ${universidad.facultades[0].carreras[0].estudiantes[0].nombre}`);
-};
+// muestra el nombre del primer estudiante de la carrera de Informática.
+const nombrePrimerEstudianteInformática = () => universidad.facultades[0].carreras[0].estudiantes[0].nombre;
+console.log(nombrePrimerEstudianteInformática); // "Laura"
 
-//Muestra el segundo hobby de Laura.
-const mostrarSegundoHobbyLaura = (universidad) => {
-  console.log(`Segundo hobby de Laura: ${universidad.facultades[0].carreras[0].estudiantes[0].hobbies[1]}`);
-};
+// muestra el segundo hobby de laura.
+const segundoHobbyLaura = () => universidad.facultades[0].carreras[0].estudiantes[0].hobbies[1];
+console.log(segundoHobbyLaura); // "ajedrez"  
 
-// Muestra la edad de Sofía.
-const mostrarEdadSofia = (universidad) => {
-  console.log(`Edad de Sofía: ${universidad.facultades[0].carreras[1].estudiantes[0].edad}`);
-};
+// muestar la edad de Sofía.
+const edadSofia = () => universidad.facultades[0].carreras[1].estudiantes[0].edad;
+console.log(edadSofia); // 21 
 
-// Muestra el primer hobby del estudiante de Derecho Penal.
-const mostrarPrimerHobbyDerechoPenal = (universidad) => {
-  console.log(`Primer hobby del estudiante de Derecho Penal: ${universidad.facultades[1].carreras[0].estudiantes[0].hobbies[0]}`);
-};
-
-mostrarNombreUniversidad(universidad);
-mostrarCalleUniversidad(universidad);
-mostrarPrimeraFacultad(universidad);
-mostrarPrimeraCarrera(universidad);
-mostrarSegundaCarrera(universidad);
-mostrarPrimerEstudianteInformática(universidad);
-mostrarSegundoHobbyLaura(universidad);
-mostrarEdadSofia(universidad);
-mostrarPrimerHobbyDerechoPenal(universidad);
+ // muestra el primer hobby del estudiante de Derecho Penal.
+const primerHobbyDerechoPenal = () => universidad.facultades[1].carreras[0].estudiantes[0].hobbies[0];
+console.log(primerHobbyDerechoPenal); // "debate"
 

@@ -92,6 +92,78 @@ const personas = [
 console.log(personas[0].nombre); // "Luis"
 console.log(personas[1].edad); // 25
 
+// Acceder a objetos
+const usuarios = { nombre: "Carlos", edad: 28 };
+console.log(usuario.edad); // 28
+console.log(usuario.nombre); // "Carlos"
+
+
+const usuario = { nombre: "Ana", "correo ": "ana@mail.com" };
+console.log(usuario["nombre"]); // "Ana"
+console.log(usuario["correo-personal"]); // "ana@mail.com"
+
+//Acceso en estructuras anidadas
+const empresa = {
+  nombre: "TechCorp",
+  empleados: [
+    {
+      nombre: "Ana",
+      direccion: { ciudad: "Madrid", codigoPostal: "28001" },
+    },
+    {
+      nombre: "Luis",
+      direccion: { ciudad: "Barcelona", codigoPostal: 8001 },
+    },
+  ],
+};
+// Ejemplos de acceso
+console.log(empresa.empleados[0].nombre);
+// "Ana"
+console.log(empresa.empleados[1].direccion.ciudad);
+// "Barcelona"
+console.log(empresa.empleados[0]["direccion"]["codigoPostal"]);
+// 28001
+// El último también se puede escribir de esta forma:
+console.log(empresa.empleados[0].direccion.codigoPostal);
+
+//Analice y codifique el siguiente objeto:
+const persona = {
+  nombre: "Anner",
+  edad: 28,
+  direccion: {
+    ciudad: "Managua",
+    codigoPostal: 28001,
+  },
+  hobbies: ["leer", "correr", "pintar"],
+};
+
+//Cree funciones flecha que reciban ese objeto por parámetro e impriman lo siguiente:
+ 
+// Muestra el nombre de la persona.
+const mostrarNombre = (persona) => {
+  console.log(`Nombre: ${persona.nombre}`);
+};
+
+// Muestra la edad de la persona.
+const mostrarEdad = (persona) => {
+  console.log(`Edad: ${persona.edad}`);
+}
+
+//Muestra la ciudad donde vive.
+const mostrarCiudad = (persona) => {
+  console.log(`Ciudad: ${persona.direccion.ciudad}`);
+};
+
+// Muestra el código postal usando corchetes.
+const mostrarCodigoPostal = (persona) => {
+  console.log(`Código Postal: ${persona.direccion["codigoPostal"]}`);
+};
+
+// Muestra el segundo hobby de la persona.
+const mostrarSegundoHobby = (persona) => {
+  console.log(`Segundo Hobby: ${persona.hobbies[1]}`);
+};
+
 
 
 
